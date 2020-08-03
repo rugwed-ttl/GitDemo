@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="1" hostname="INHNJLPT-961367" name="pytest" skipped="0" tests="3" time="243.061" timestamp="2020-07-31T16:59:13.978394"><testcase classname="test_e2e.TestOne" file="test_e2e.py" line="16" name="test_e2e" time="82.768"></testcase><testcase classname="test_e2e.TestOne" file="test_e2e.py" line="42" name="test_contact" time="82.202"></testcase><testcase classname="test_e2e.TestOne" file="test_e2e.py" line="101" name="test_opportuinity" time="77.965"><failure message="TypeError: can only concatenate str (not &quot;AssertionError&quot;) to str">self = &lt;tests.test_e2e.TestOne object at 0x000002DE580D0A60&gt;
+
+    def test_opportuinity(self):
+        try :
+            log = self.getLogger ()
+            opportunityPage = OpportunityPage (self.driver)
+            opportunityPage.getOptyRadioButton ().click ()
+            log.info (&quot;Clicked on Opportunity radio button&quot;)
+            opportunityPage.getOptyCreateNew ().click ()
+            log.info (&quot;Moved on Create Opportunity page&quot;)
+            opportunityPage.getOptyVcSearchField ().send_keys (&quot;28182024ABFR&quot;)
+            opportunityPage.getOptyVcSearchButton ().click ()
+            log.info (&quot;Entered VC number &apos;28182024ABFR&apos; &quot;)
+            opportunityPage.getOptyVcList ().click ()
+            opportunityPage.getOptyVehicleAppField ().click ()
+            opportunityPage.getOptyVehicleApp ().click ()
+            log.info (&quot;Selected Vehicle application as &apos;Fruits &amp; Vegetables&apos; &quot;)  # Market Load
+            opportunityPage.getOptyBodyType ().click ()
+            log.info (&quot;Selected Body type as &apos;High Deck&apos; &quot;)  # Cowl
+            opportunityPage.getOptyCustomerTypeField ().click ()
+            opportunityPage.getOptyCustomerType ().click ()
+            log.info (&quot;Selected Customer type as &apos;Government Existing&apos; &quot;)  # First Time
+            opportunityPage.getOptySOCfield ().click ()
+            opportunityPage.getOptySOC ().click ()
+            log.info (&quot;Selected Source of contact as &apos;Customer Meet&apos; &quot;)  # Cold Call
+            opportunityPage.getOptyQuantity ().send_keys (2)
+            log.info (&quot;Selected quantity as &apos;2&apos; &quot;)
+            opportunityPage.getOptyLPMfield ().click ()
+            opportunityPage.getOptyLPM ().click ()
+            log.info (&quot;Selected Likely Purchase month as &apos;August&apos; &quot;)
+            opportunityPage.getOptyUsageCatField ().click ()
+            opportunityPage.getOptyUsageCat ().click ()
+            log.info (&quot;Selected Usage Category as &apos;Captive&apos; &quot;)
+            opportunityPage.getOptyMMGfield ().click ()
+            opportunityPage.getOptyMMG ().send_keys (&quot;Akol&quot;)
+            time.sleep (3)
+            log.info (&quot;Entered MMGeo location as &apos;Akola&apos; &quot;)
+            User_Action = TouchAction (self.driver)
+            User_Action.tap (x=686, y=1228).perform ()
+            opportunityPage.getOptySearchContact ().send_keys (&quot;8999413547&quot;)
+            opportunityPage.getOptySearchConButton ().click ()
+            log.info (&quot;Entered &apos;8999413547&apos; mobile number to create opportunity for this contact&quot;)
+            time.sleep (10)
+            User_Action.tap (x=83, y=1196).perform ()
+            opportunityPage.getOptySearchSubmit ().click ()
+            time.sleep (40)
+            log.info (&quot;Entered all opty details and clicked on Submit button &quot;)
+            Fmsg = opportunityPage.getOptyMessage ().text
+            log.error (&quot;Opportunity is not created successfully due to error : &quot; + Fmsg)
+&gt;           assert False
+E           AssertionError: assert False
+
+test_e2e.py:149: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;tests.test_e2e.TestOne object at 0x000002DE580D0A60&gt;
+
+    def test_opportuinity(self):
+        try :
+            log = self.getLogger ()
+            opportunityPage = OpportunityPage (self.driver)
+            opportunityPage.getOptyRadioButton ().click ()
+            log.info (&quot;Clicked on Opportunity radio button&quot;)
+            opportunityPage.getOptyCreateNew ().click ()
+            log.info (&quot;Moved on Create Opportunity page&quot;)
+            opportunityPage.getOptyVcSearchField ().send_keys (&quot;28182024ABFR&quot;)
+            opportunityPage.getOptyVcSearchButton ().click ()
+            log.info (&quot;Entered VC number &apos;28182024ABFR&apos; &quot;)
+            opportunityPage.getOptyVcList ().click ()
+            opportunityPage.getOptyVehicleAppField ().click ()
+            opportunityPage.getOptyVehicleApp ().click ()
+            log.info (&quot;Selected Vehicle application as &apos;Fruits &amp; Vegetables&apos; &quot;)  # Market Load
+            opportunityPage.getOptyBodyType ().click ()
+            log.info (&quot;Selected Body type as &apos;High Deck&apos; &quot;)  # Cowl
+            opportunityPage.getOptyCustomerTypeField ().click ()
+            opportunityPage.getOptyCustomerType ().click ()
+            log.info (&quot;Selected Customer type as &apos;Government Existing&apos; &quot;)  # First Time
+            opportunityPage.getOptySOCfield ().click ()
+            opportunityPage.getOptySOC ().click ()
+            log.info (&quot;Selected Source of contact as &apos;Customer Meet&apos; &quot;)  # Cold Call
+            opportunityPage.getOptyQuantity ().send_keys (2)
+            log.info (&quot;Selected quantity as &apos;2&apos; &quot;)
+            opportunityPage.getOptyLPMfield ().click ()
+            opportunityPage.getOptyLPM ().click ()
+            log.info (&quot;Selected Likely Purchase month as &apos;August&apos; &quot;)
+            opportunityPage.getOptyUsageCatField ().click ()
+            opportunityPage.getOptyUsageCat ().click ()
+            log.info (&quot;Selected Usage Category as &apos;Captive&apos; &quot;)
+            opportunityPage.getOptyMMGfield ().click ()
+            opportunityPage.getOptyMMG ().send_keys (&quot;Akol&quot;)
+            time.sleep (3)
+            log.info (&quot;Entered MMGeo location as &apos;Akola&apos; &quot;)
+            User_Action = TouchAction (self.driver)
+            User_Action.tap (x=686, y=1228).perform ()
+            opportunityPage.getOptySearchContact ().send_keys (&quot;8999413547&quot;)
+            opportunityPage.getOptySearchConButton ().click ()
+            log.info (&quot;Entered &apos;8999413547&apos; mobile number to create opportunity for this contact&quot;)
+            time.sleep (10)
+            User_Action.tap (x=83, y=1196).perform ()
+            opportunityPage.getOptySearchSubmit ().click ()
+            time.sleep (40)
+            log.info (&quot;Entered all opty details and clicked on Submit button &quot;)
+            Fmsg = opportunityPage.getOptyMessage ().text
+            log.error (&quot;Opportunity is not created successfully due to error : &quot; + Fmsg)
+            assert False
+        except Exception as e :
+&gt;           log.info (&quot;This message is because of error&quot; + e)
+E           TypeError: can only concatenate str (not &quot;AssertionError&quot;) to str
+
+test_e2e.py:151: TypeError</failure></testcase></testsuite></testsuites>
